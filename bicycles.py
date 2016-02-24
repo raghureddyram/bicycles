@@ -31,7 +31,7 @@ class BicycleShop(object):
 
     def margin(self):
         cost_of_goods = self.inventory_cost()
-        return 0.10 * cost_of_goods
+        return 0.20 * cost_of_goods
 
     def profit_or_loss(self, bicycle_model = "Trek"):
         cost_of_sale = 100
