@@ -9,9 +9,9 @@ class Bicycle(object):
 
 class BicycleShop(object):
 
-    def __init__(self, name = "Bill's Bikes"):
+    def __init__(self, name = "Bill's Bikes", inventory = []):
         self.name = name
-        self.inventory = []
+        self.inventory = inventory
 
     def add_to_inventory(self, bicycle_model = Bicycle()):
         self.inventory.append(bicycle_model)
@@ -46,27 +46,10 @@ class Customer(object):
         self.budget = budget
         self.bicycles = []
 
+    def bike_in_budget(self, bike_model):
+        return self.budget >= bike_model.cost()
+
     def purchase_bike(self, bike_model):
-        if self.budget > bike_model.cost():
+        if bike_in_budget(bike_model):
             self.budget -= bike_model.cost()
             self.bicycles.append(bike_model)
-
-
-
-
-b = Bicycle()
-
-b.cost
-
-# print(b.weight)
-
-bills  = BicycleShop()
-
-bills.add_to_inventory(Bicycle("Shwin", 20))
-
-bills.add_to_inventory()
-
-print(bills.inventory)
-print(bills.inventory_cost())
-
-print(bills.profit_or_loss())
