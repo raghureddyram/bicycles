@@ -21,6 +21,7 @@ if __name__ == '__main__':
 
     print("-----------")
     customer_list = list(map((lambda customer: customer.name), customers)) ##is there a cleaner way to iterate and map over just the names?
+    ## or customer_list = [customer.name for customer in customers]
     # print(customer_list)
     # print("customers are : {}".format(customer_list)
     bikes_in_customer_budget = {}
